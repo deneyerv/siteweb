@@ -51,18 +51,18 @@ hr.star-primary:after {
   padding: 0 0.25em;
 }
 hr.star-light {
-  border-color: white;
+  border-color: #10233d;
 }
 hr.star-light:after {
-  background-color: #a28572;
+  background-color: #10233d;;
   color: white;
 }
 hr.star-primary {
-  border-color: #a28572;
+  border-color: #FFFFFF;;
 }
 hr.star-primary:after {
   background-color: white;
-  color: #a28572;
+  color: #10233d;
 }
 .img-centered {
   margin: 0 auto;
@@ -133,7 +133,7 @@ header .intro-text .skills {
   color: #10233d;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: ##10233d;
+  color: #10233d;
   outline: none;
 }
 .navbar-custom .navbar-nav li a:focus,
@@ -158,7 +158,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #a28572;
+  background-color: #10233d;
   color: white;
   border-color: #a28572;
 }
@@ -190,9 +190,9 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #a28572;
+  background: #ffffff;
 
-  color: white;
+  color: #10233d;
 }
 @media (max-width: 767px) {
   section {
@@ -202,6 +202,18 @@ section.success {
     padding-top: 75px;
   }
 }
+
+#portfolio {
+
+background: url(http://github.com/deneyerv/siteweb/blob/master/site/background-space.jpg?raw=true) no-repeat center center fixed; 
+  
+  background-size: cover;
+
+  }
+
+  #portfolio h2{
+color:white;
+  }
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
@@ -213,7 +225,7 @@ section.success {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .caption {
-  background: rgba(24, 188, 156, 0.9);
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -233,7 +245,7 @@ section.success {
   text-align: center;
   top: 50%;
   margin-top: -12px;
-  color: white;
+  color: #10233d;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
   margin-top: -12px;
