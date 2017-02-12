@@ -69,7 +69,9 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background-color: #d9c900;
+ 
+  background: url(http://vitekgraphic.com/wp-content/uploads/2014/08/01_space.jpg) no-repeat center center fixed; 
+  background-repeat: no-repeat;
   color: white;
 }
 header .container {
@@ -95,6 +97,7 @@ header .intro-text .skills {
   header .container {
     padding-top: 200px;
     padding-bottom: 100px;
+    
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -138,7 +141,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li.active a {
   color: white;
-  background: #a28572;
+  background: #000000;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
@@ -187,6 +190,7 @@ section h2 {
 }
 section.success {
   background: #a28572;
+
   color: white;
 }
 @media (max-width: 767px) {
