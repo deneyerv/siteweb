@@ -37,18 +37,87 @@
 
 <body id="page-top" class="index">
 
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
-	
-		  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1p2QUCZEqgphJDOsKodu8m288uqggf2c&callback=myMap"></script>
 
+	
+		 
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+     <script> 
+      jQuery(document).ready(function(){
+
+jQuery.fn.extend({
+   findPos : function() {
+       obj = jQuery(this).get(0);
+       var curleft = obj.offsetLeft || 0;
+       var curtop = obj.offsetTop || 0;
+       while (obj = obj.offsetParent) {
+                curleft += obj.offsetLeft
+                curtop += obj.offsetTop
+       }
+       return {x:curleft,y:curtop};
+   }
+});
+
+  pos = $('header').findPos();
+//retourne le coordonnées via
+   console.log(pos.x);
+//et 
+   console.log(pos.y);
+        
+                document.onmousemove = suitsouris;
+                function suitsouris(evenement)
+                {
+                        if(navigator.appName=="Microsoft Internet Explorer")
+                        {
+                                var x = event.x+document.body.scrollLeft;
+                                var y = event.y+document.body.scrollTop;
+                        }
+                        else
+                        {
+                                var x =  evenement.pageX;
+                                var y =  evenement.pageY;
+                        }
+                        document.getElementById("image_suit_souris").style.left = (x+1)+'px';
+                        document.getElementById("image_suit_souris").style.top  = (y+1)+'px';
+                       
+
+                        $('#image_suit_souris').css({
+                            position:'absolute', // couleur rouge
+                            width : '300px', // largeur de 300px
+                            height : '200px',// hauteur de 200px
+                            display: 'block'
+                           
+                        });
+
+                        if( x >= 300)
+
+                            {
+                        $('#image_suit_souris').css({
+                            position:'fixed', // couleur rouge
+                            width : '100px', // largeur de 300px
+                            height : '50px',// hauteur de 200px
+                            display: 'block'
+
+
+                            });
+                         }
+                        else
+                         {
+                            console.log("test");
+                        }
+
+
+
+    };
+
+
+});
+
+           // Du code en jQuery va pouvoir être tapé ici !
+       
+   </script>
+
+ 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
@@ -83,11 +152,13 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
+    <header >
+        <div class="container"  id="move">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/futurama.png" alt="Caway" height="33%" width="33%">
+                <div id="movee">
+                   <img class="img-responsive" id="image_suit_souris" src="img/futurama.png" alt="Caway" height="33%" width="33%" > 
+                </div>
                     <div class="intro-text">
                         <span class="name">Enjoy trip smarter</span>
                         <hr class="star-primary">
@@ -115,6 +186,7 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 <!--[if lte IE 6 ]>
 	<embed src="http://www.youtube.com/v/_etwz7NkemE&hl=fr" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed>
 <![endif]-->
+
 </div>
 </center>
 
@@ -183,30 +255,7 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 </center>
                     </a>
                 </div>
-<!--
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
--->
+
     </section>
 
 
@@ -220,30 +269,32 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
             </div>
 <center>
 <div id="googleMap" style="width:100%;height:600px;"></div>
+
 <script>
-function myMap() {
+    function myMap() {
 
-var myLating =new google.maps.LatLng(50.811369,4.397705); 
-var attiDansSonDIvan =new google.maps.LatLng(50.811262,4.397815); 
-var mapProp= {
-    center:myLating,
-    zoom:20,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var myLating =new google.maps.LatLng(50.811369,4.397705); 
+    var attiDansSonDIvan =new google.maps.LatLng(50.811262,4.397815); 
+    var mapProp= {
+        center:myLating,
+        zoom:20,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 
-var marker = new google.maps.Marker({
-    position:attiDansSonDIvan,
-	map:map,
-    title:"KIKOU ATTI"
-});
+    var marker = new google.maps.Marker({
+        position:attiDansSonDIvan,
+    	map:map,
+        title:"KIKOU ATTI"
+    });
 
-// To add the marker to the map, call setMap();
-marker.setMap(mapProp);
-}
+    // To add the marker to the map, call setMap();
+    marker.setMap(mapProp);
+    }
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1p2QUCZEqgphJDOsKodu8m288uqggf2c&callback=myMap"></script>
+
 </center>
 
     <div class="col-lg-8 col-lg-offset-2 text-center">
